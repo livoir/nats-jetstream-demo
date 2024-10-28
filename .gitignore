@@ -39,3 +39,6 @@ configs/config.yaml
 
 # Coverage
 coverage
+
+# NATS config
+nats.conf

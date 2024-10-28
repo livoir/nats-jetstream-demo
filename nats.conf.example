@@ -1,0 +1,25 @@
+# Enable JetStream
+jetstream: true
+
+authorization {
+  users = [
+    { user: "USER_NAME", password: "PASSWORD", permissions: {
+        publish: ">"
+        subscribe: ">"
+    } }
+  ]
+} 
+
+# Cluster configuration
+cluster {
+  name: "c1"
+  listen: "0.0.0.0:6222"
+  routes = [
+    "nats-route://nats1:6222",
+    "nats-route://nats2:6222",
+    "nats-route://nats3:6222"
+  ]
+}
+
+# Monitoring configuration
+http_port: 8222
