@@ -18,7 +18,8 @@ func main() {
 	for _, server := range natsServer {
 		natsUrl += "," + server
 	}
-	nc, err := nats.Connect(natsUrl, nats.MaxReconnects(10), nats.UserInfo("js_user", "password123"))
+	opt, err := nats.NkeyOptionFromSeed("./user.cred")
+	nc, err := nats.Connect(natsUrl, nats.MaxReconnects(10), opt)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -3,10 +3,19 @@ jetstream: true
 
 authorization {
   users = [
-    { user: "USER_NAME", password: "PASSWORD", permissions: {
-        publish: ">"
-        subscribe: ">"
-    } }
+    # { user: "USER_NAME", password: "PASSWORD", permissions: {
+    #     publish: ">"
+    #     subscribe: ">"
+    # } }
+
+     {
+        nkey: "GENERATED FROM nk -gen user -pubout ", # UXXXXXXXXX
+        permissions: {
+            publish: ">"
+            subscribe: ">"
+        }
+    }
+
   ]
 } 
 

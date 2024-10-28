@@ -42,3 +42,4 @@ coverage
 
 # NATS config
 nats.conf
+*.cred
